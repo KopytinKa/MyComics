@@ -11,7 +11,7 @@ import Foundation
 private let publicKey = ""
 #warning("Setup your private key and delete the warning")
 private let privateKey = ""
-                                                    
+                                                                               
 final class NetworkService {
     
     // MARK: - Private Properties
