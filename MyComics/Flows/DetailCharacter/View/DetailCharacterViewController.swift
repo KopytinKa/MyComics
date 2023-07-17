@@ -19,7 +19,7 @@ final class DetailCharacterViewController: UIViewController {
         return characterImageView
     }()
     
-    private var nameCharacterLabel: UILabel = {
+    private let nameCharacterLabel: UILabel = {
         let nameCharacterLabel = UILabel()
         nameCharacterLabel.textColor = .white
         nameCharacterLabel.font = .systemFont(ofSize: 23, weight: .bold)
@@ -34,13 +34,6 @@ final class DetailCharacterViewController: UIViewController {
         descriptionLabel.font = .systemFont(ofSize: 17, weight: .light)
         descriptionLabel.numberOfLines = 10
         return descriptionLabel
-    }()
-    
-    private let likeBarButtonItem: UIBarButtonItem = {
-        let likeBarButtonItem = UIBarButtonItem()
-        likeBarButtonItem.image = UIImage(systemName: "heart.fill")
-        likeBarButtonItem.tintColor = UIColor(named: "custom_red")
-        return likeBarButtonItem
     }()
     
     // MARK: - Init
@@ -63,10 +56,15 @@ final class DetailCharacterViewController: UIViewController {
     }
     
     // MARK: - Private methods
+    @objc func tapLikeNavBarButton() {
+        print("tapLike")
+    }
     
     private func configureUI() {
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.rightBarButtonItem = likeBarButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: .likeBarButtonItem, style: .plain, target: self, action: #selector(tapLikeNavBarButton))
+        navigationItem.rightBarButtonItem?.tintColor = .marvelRed
+        
         view.backgroundColor = .commonBackground
         view.addSubview(descriptionLabel)
         view.addSubview(nameCharacterLabel)
