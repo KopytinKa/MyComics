@@ -1,13 +1,6 @@
-//
-//  CharactersScreenCoordinator.swift
-//  MyComics
-//
-//  Created by Антон Сивцов on 09.07.2023.
-//
-
 import UIKit
 
-final class CharactersScreenCoordinator: DetailSupportableCoordinator {
+final class ComicsScreenCoordinator: DetailSupportableCoordinator {
     
     // MARK: - Dependencies
     
@@ -22,7 +15,7 @@ final class CharactersScreenCoordinator: DetailSupportableCoordinator {
     // MARK: - CharactersCoordinator
     
     func openDetailScreen(id: Int) {
-        let viewController = DetailCharacterModuleBuilder.build(characterID: id)
+        let viewController = DetailComicModuleBuilder.build(id: id)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

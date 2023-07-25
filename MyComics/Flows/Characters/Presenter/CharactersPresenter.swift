@@ -19,12 +19,12 @@ final class CharactersPresenter {
     
     // MARK: - Dependencies
     
-    private let coordinator: CharactersCoordinator
+    private let coordinator: DetailSupportableCoordinator
     private let dataAdapter: CharactersDataAdapterProtocol
     
     // MARK: - Init
     
-    init(coordinator: CharactersCoordinator,
+    init(coordinator: DetailSupportableCoordinator,
          dataAdapter: CharactersDataAdapterProtocol) {
         self.coordinator = coordinator
         self.dataAdapter = dataAdapter
@@ -90,6 +90,6 @@ extension CharactersPresenter: CharactersViewOutput {
     
     func didTapCell(_ indexPath: IndexPath) {
         guard let characterID = dataAdapter.getCharacterID(by: indexPath, isSearching: isSearching) else { return }
-        coordinator.openDetailScreen(characterID: characterID)
+        coordinator.openDetailScreen(id: characterID)
     }
 }

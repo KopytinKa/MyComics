@@ -13,6 +13,9 @@ final class DetailComicPresenter {
     
     weak var view: DetailComicViewInput?
     
+    init(id: Int) {
+        
+    }
 }
 
 // MARK: - DetailComicViewOutput

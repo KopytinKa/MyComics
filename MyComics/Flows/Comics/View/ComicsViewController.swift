@@ -11,7 +11,7 @@ final class ComicsViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var presenter: ComicsViewOutput
+    private let presenter: ComicsViewOutput
     private let contentView = ComicsContentView()
     private let searchController = UISearchController()
 
@@ -31,6 +31,10 @@ final class ComicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        contentView.didSelectAction = { [unowned self] indexPath in
+            presenter.didTapCell(indexPath)
+        }
     }
     
     override func loadView() {

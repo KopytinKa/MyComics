@@ -9,8 +9,8 @@ import UIKit
 
 final class DetailComicModuleBuilder {
     
-    static func build() -> UIViewController {
-        let presenter = DetailComicPresenter()
+    static func build(id: Int) -> UIViewController {
+        let presenter = DetailComicPresenter(id: id)
         let vc = DetailComicViewController(presenter: presenter)
         presenter.view = vc
         return vc
