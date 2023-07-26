@@ -36,6 +36,11 @@ final class ComicsDataAdapter: ComicsDataAdapterProtocol {
             print("(ComicsDataAdapter): Comics items loaded = \(String(describing: rawData?.count))")
         }
     }
+    
+    func getComicID(by indexPath: IndexPath) -> Int? {
+        guard let entity = entities[safe: indexPath.item] else { return nil }
+        return entity.id
+    }
 }
 
 private extension ComicsDataAdapter {

@@ -7,9 +7,12 @@
 
 import UIKit
 
+typealias IndexPathComicsClosure = (IndexPath) -> Void
+
 final class ComicsContentView: UICollectionView {
     
     var comicsData: [ComicsCollectionViewCell.Model] = []
+    private var didTapCell: IndexPathComicsClosure?
     
     // MARK: - init
     
@@ -57,5 +60,17 @@ extension ComicsContentView {
                   author: $0.author,
                   image: $0.image)
         }
+    }
+    
+    func setOnCellTapAction(_ action: @escaping IndexPathComicsClosure) {
+        didTapCell = action
+    }
+}
+
+// MARK: - UICollectionViewDelegate -
+
+extension ComicsContentView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didTapCell?(indexPath)
     }
 }

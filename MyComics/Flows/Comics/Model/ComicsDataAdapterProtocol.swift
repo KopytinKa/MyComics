@@ -9,4 +9,5 @@ import Foundation
 
 protocol ComicsDataAdapterProtocol {
     func getData(completion: @escaping ([ComicsPresentableModel]) -> Void)
+    func getComicID(by indexPath: IndexPath) -> Int?
 }
