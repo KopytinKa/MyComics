@@ -14,6 +14,16 @@ final class AuthService: AuthServiceProtocol {
 
     weak var delegate: AuthServiceDelegate?
     
+    // MARK: - Private Properties
+    
+    private let userStorage: UserIDStoragable
+    
+    // MARK: - Init
+    
+    init(userStorage: UserIDStoragable) {
+        self.userStorage = userStorage
+    }
+    
     // MARK: - Methods
 
     func login(email: String, password: String) {
@@ -54,6 +64,7 @@ final class AuthService: AuthServiceProtocol {
     func checkAuth() {
         Auth.auth().addStateDidChangeListener { [weak self] _, user in
             if let user {
+                self?.userStorage.saveUser(user.uid)
                 self?.delegate?.loginSuccess(by: user.uid)
             } else {
                 self?.delegate?.logoutSuccess()

@@ -8,7 +8,8 @@
 import UIKit
 
 extension UIImage {
-    static let likeButton: UIImage? = checkedImage(name: "like_button")
+    static let fillHeart: UIImage? = UIImage(systemName: "heart.circle.fill")
+    static let emptyHeart: UIImage? = UIImage(systemName: "heart.circle")
     static let characterPlaceholder: UIImage? = checkedImage(name: "placeholder_image")
     static let searchImage: UIImage? = UIImage(systemName: "magnifyingglass")
     static let likeBarButtonItem: UIImage? = UIImage(systemName: "heart")

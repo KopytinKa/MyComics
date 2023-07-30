@@ -9,7 +9,7 @@ import UIKit
 
 final class AuthModuleBuilder {
     static func build(_ navigationController: UINavigationController?) -> UIViewController {
-        let authService = AuthService()
+        let authService = AuthService(userStorage: UserAuthStorage.shared)
         let databaseService = DatabaseService()
         let coordinator = AuthCoordinator(navigationController: navigationController)
         let userDefaultsService = UserDefaultsService()
