@@ -16,18 +16,25 @@ final class DetailCharacterPresenter {
     
     // MARK: - Dependency
     
+    private let notificationCenter: NotificationCenter
     private let characterAPIService: any CharactersAPI
+    private let likesManager: LikesInfoProvider & LikesManager
     
     // MARK: - Init
     
-    init(id: Int, characterAPIService: any CharactersAPI) {
+    init(id: Int,
+         characterAPIService: any CharactersAPI,
+         likesManager: LikesInfoProvider & LikesManager) {
+        self.notificationCenter = NotificationCenter.default
         self.id = id
         self.characterAPIService = characterAPIService
+        self.likesManager = likesManager
     }
     
     // MARK: - Private methods
     
     private func loadCharacter() {
+        let isLiked = likesManager.isLiked(self.id)
         characterAPIService.getContent(by: id) { [weak self] character in
             let model = DetailCharacterModel(
                 id: character?.id,
@@ -36,7 +43,8 @@ final class DetailCharacterPresenter {
                 image: AsyncImage(
                     imageURL: character?.thumbnail?.path,
                     imageExtension: character?.thumbnail?.extension
-                )
+                ),
+                isLiked: isLiked
             )
             DispatchQueue.main.async {
                 self?.view?.updateView(model: model)
@@ -50,5 +58,10 @@ final class DetailCharacterPresenter {
 extension DetailCharacterPresenter: DetailCharacterViewOutput {
     func viewIsReady() {
         loadCharacter()
+    }
+    
+    func didTapLikeButton() {
+        likesManager.saveLike(id)
+        notificationCenter.post(name: .itemWasLikedOrDislike, object: nil)
     }
 }

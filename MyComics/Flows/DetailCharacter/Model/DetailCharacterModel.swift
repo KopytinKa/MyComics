@@ -12,4 +12,5 @@ struct DetailCharacterModel: Hashable {
     let name: String?
     let description: String?
     let image: AsyncImage?
+    var isLiked: Bool
 }

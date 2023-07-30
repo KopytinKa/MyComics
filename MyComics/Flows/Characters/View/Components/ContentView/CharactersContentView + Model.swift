@@ -8,8 +8,10 @@
 import Foundation
 
 extension CharactersContentView {
-    struct Model: Hashable {
+    struct Model: Hashable, Identifiable {
+        let id: UUID = UUID()
         let title: String
         let image: AsyncImage
+        let isLiked: Bool
     }
 }

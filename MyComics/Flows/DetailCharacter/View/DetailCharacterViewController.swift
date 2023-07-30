@@ -13,6 +13,7 @@ final class DetailCharacterViewController: UIViewController {
     
     private let presenter: DetailCharacterViewOutput
     
+    private let likeButton = LikeButton()
     private let characterImageView: AsyncImageView = {
         let characterImageView = AsyncImageView()
         characterImageView.contentMode = .scaleAspectFit
@@ -58,12 +59,14 @@ final class DetailCharacterViewController: UIViewController {
     // MARK: - Private methods
     
     @objc func tapLikeNavBarButton() {
-        print("tapLike")
+        presenter.didTapLikeButton()
     }
     
     private func configureUI() {
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: .likeBarButtonItem, style: .plain, target: self, action: #selector(tapLikeNavBarButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: likeButton)
+        likeButton.isUserInteractionEnabled = false
+        likeButton.addTarget(self, action: #selector(tapLikeNavBarButton), for: .touchUpInside)
         navigationItem.rightBarButtonItem?.tintColor = .marvelRed
         view.backgroundColor = .commonBackground
         view.addSubview(descriptionLabel)
@@ -106,5 +109,7 @@ extension DetailCharacterViewController: DetailCharacterViewInput {
         nameCharacterLabel.text = model.name
         descriptionLabel.text = model.description
         characterImageView.asyncImage = model.image
+        likeButton.updateState(model.isLiked)
+        likeButton.isUserInteractionEnabled = true
     }
 }

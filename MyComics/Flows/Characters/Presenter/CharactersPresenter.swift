@@ -19,15 +19,30 @@ final class CharactersPresenter {
     
     // MARK: - Dependencies
     
+    private let notificationCenter: NotificationCenter
     private let coordinator: CharactersCoordinator
     private let dataAdapter: CharactersDataAdapterProtocol
+    private let likesManager: LikesManager
     
     // MARK: - Init
     
     init(coordinator: CharactersCoordinator,
-         dataAdapter: CharactersDataAdapterProtocol) {
+         dataAdapter: CharactersDataAdapterProtocol,
+         likesManager: LikesManager) {
+        self.notificationCenter = NotificationCenter.default
         self.coordinator = coordinator
         self.dataAdapter = dataAdapter
+        self.likesManager = likesManager
+        
+        notificationCenter.addObserver(forName: .itemWasLikedOrDislike, object: nil, queue: .main) { [weak self] _ in
+            guard let self else { return }
+            let content = self.dataAdapter.getUpdatedContent()
+            self.updateView(with: content)
+        }
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(self, name: .itemWasLikedOrDislike, object: nil)
     }
 }
 
@@ -36,7 +51,7 @@ final class CharactersPresenter {
 private extension CharactersPresenter {
     func updateView(with models: [CharacterPresentableModel]) {
         let models: [CharactersContentView.Model] = models.map {
-            .init(title: $0.title, image: $0.image)
+            .init(title: $0.title, image: $0.image, isLiked: $0.isLiked)
         }
         
         DispatchQueue.main.async { [weak self] in
@@ -86,6 +101,9 @@ extension CharactersPresenter: CharactersViewOutput {
     
     func didTapLike(_ indexPath: IndexPath) {
         // TODO: 4.9 implement logic
+        guard let characterID = dataAdapter.getCharacterID(by: indexPath, isSearching: isSearching) else { return }
+        
+        likesManager.saveLike(characterID)
     }
     
     func didTapCell(_ indexPath: IndexPath) {

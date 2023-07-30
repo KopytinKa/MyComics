@@ -12,5 +12,6 @@ protocol CharactersDataAdapterProtocol {
     func getNextPageData(completion: @escaping ([CharacterPresentableModel]) -> Void)
     func getCharactersForText(_ text: String, completion: @escaping ([CharacterPresentableModel]) -> Void)
     func getCharacterID(by indexPath: IndexPath, isSearching: Bool) -> Int?
-    func getLoadedContent() -> [CharacterPresentableModel] 
+    func getLoadedContent() -> [CharacterPresentableModel]
+    func getUpdatedContent() -> [CharacterPresentableModel] 
 }

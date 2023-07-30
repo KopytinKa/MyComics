@@ -15,7 +15,7 @@ final class ComicsCollectionViewCell: UICollectionViewCell {
     var titleLabel = UILabel()
     var authorLabel = UILabel()
     private var gradientView = UIView()
-    private var likeButton = UIButton()
+    private var likeButton = LikeButton()
     private var identifier = "ComicsCollectionViewCell"
     var data: [Model] = []
     
@@ -47,7 +47,6 @@ private extension ComicsCollectionViewCell {
         contentView.layer.cornerRadius = 10
         addSubviews()
         setupImageView()
-        setupLikeButton()
         setupTitleLabel()
         setupAuthorLabel()
         setupGradientView()
@@ -102,10 +101,6 @@ private extension ComicsCollectionViewCell {
     
     func setupGradientView() {
         gradientView.frame = contentView.bounds
-    }
-    
-    func setupLikeButton() {
-        likeButton.setImage(.likeButton, for: .normal)
     }
     
     func setupTitleLabel() {

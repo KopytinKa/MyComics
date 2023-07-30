@@ -48,7 +48,7 @@ final class CharactersContentView: UICollectionView {
     
     func update(models: [CharactersContentView.Model]) {
         let models: [CharactersCollectionViewCell.Model] = models.map {
-            .init(title: $0.title, image: .init($0.image))
+            .init(title: $0.title, image: .init($0.image), isLiked: $0.isLiked)
         }
         var snapshot = NSDiffableDataSourceSnapshot<Section, CharactersCollectionViewCell.Model>()
         snapshot.appendSections([.main])
