@@ -18,11 +18,14 @@ final class CharactersDataAdapter: CharactersDataAdapterProtocol {
     // MARK: - Dependencies
     
     private let charactersAPI: any CharactersAPI
+    private let likesInfoProvider: LikesInfoProvider
     
     // MARK: - Init
     
-    init(charactersAPI: some CharactersAPI) {
+    init(charactersAPI: some CharactersAPI,
+         likesInfoProvider: LikesInfoProvider) {
         self.charactersAPI = charactersAPI
+        self.likesInfoProvider = likesInfoProvider
     }
     
     // MARK: - Public Methods
@@ -55,6 +58,18 @@ final class CharactersDataAdapter: CharactersDataAdapterProtocol {
     }
     
     func getLoadedContent() -> [CharacterPresentableModel] {
+        return models
+    }
+    
+    func getUpdatedContent() -> [CharacterPresentableModel] {
+        let models = models.map { model in
+            var model = model
+            let isLiked = likesInfoProvider.isLiked(Int(model.id))
+            model.isLiked = isLiked
+            return model
+        }
+        
+        self.models = models
         return models
     }
 }
@@ -96,12 +111,14 @@ private extension CharactersDataAdapter {
     }
     
     func makeModel(from entity: CharacterEntity) -> CharacterPresentableModel {
+        let isLiked = likesInfoProvider.isLiked(entity.id)
         return CharacterPresentableModel(
+            id: String(entity.id ?? 0),
             title: entity.name ?? "",
             image: .init(
                 imageURL: entity.thumbnail?.path,
                 imageExtension: entity.thumbnail?.extension
-            )
+            ), isLiked: isLiked
         )
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 final class ProfileModuleBuilder {
     
     static func build(_ navigationController: UINavigationController?) -> UIViewController {
-        let authService = AuthService()
+        let authService = AuthService(userStorage: UserAuthStorage.shared)
         let databaseService = DatabaseService()
         let coordinator = ProfileCoordinator(navigationController: navigationController)
         let userDefaultsService = UserDefaultsService()

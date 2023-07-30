@@ -10,8 +10,7 @@ import UIKit
 final class ComicsModuleBuilder {
     
     static func build() -> UIViewController {
-        let requestConfigurator = APIRequestConfigurator<ComicEntity>(networkService: .init())
-        let comicsAPI = ComicsAPIService(apiRequestConfigurator: requestConfigurator)
+        let comicsAPI = APIBuilder.shared.makeComicsAPI()
         let dataAdapter = ComicsDataAdapter(comicsAPI: comicsAPI)
         let presenter = ComicsPresenter(
             dataAdapter: dataAdapter

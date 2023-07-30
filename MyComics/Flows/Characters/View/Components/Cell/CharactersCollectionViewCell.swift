@@ -18,8 +18,7 @@ final class CharactersCollectionViewCell: UICollectionViewCell {
     private let imageView = AsyncImageView()
     private let titleLabel = UILabel()
     private let gradientLayer = CAGradientLayer()
-    private let likeButton = UIButton()
-    private var onLikeTapped: EmptyClosure?
+    private let likeButton = LikeButton()
     
     // MARK: - Init
     
@@ -45,10 +44,11 @@ final class CharactersCollectionViewCell: UICollectionViewCell {
     func configure(_ model: Model) {
         imageView.asyncImage = model.image
         titleLabel.text = model.title
+        likeButton.updateState(model.isLiked)
     }
     
     func setLikeButtonAction(_ action: @escaping EmptyClosure) {
-        onLikeTapped = action
+        likeButton.action = action
     }
 }
 
@@ -92,10 +92,8 @@ private extension CharactersCollectionViewCell {
         // detailStackView
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            likeButton.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            likeButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -2),
-            likeButton.widthAnchor.constraint(equalToConstant: 40.roundedScale()),
-            likeButton.heightAnchor.constraint(equalToConstant: 40.roundedScale())
+            likeButton.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            likeButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)
         ])
         
         self.subviews.forEach { subviews in
@@ -120,8 +118,8 @@ private extension CharactersCollectionViewCell {
     }
     
     func setupLikeButton() {
-        likeButton.setImage(.likeButton, for: .normal)
-        likeButton.addTarget(self, action: #selector(didTapLikeButton), for: .touchUpInside)
+        likeButton.setBackgroundImage(.fillHeart, for: .normal)
+        likeButton.setTitleShadowColor(.black, for: .normal)
     }
     
     func addBottomGradient() {
@@ -130,13 +128,5 @@ private extension CharactersCollectionViewCell {
         gradientLayer.endPoint = .init(x: 0.5, y: 0.5)
         imageView.layer.addSublayer(gradientLayer)
         gradientLayer.frame = contentView.bounds
-    }
-}
-
-// MARK: - Private Actions
-
-private extension CharactersCollectionViewCell {
-    @objc func didTapLikeButton() {
-        onLikeTapped?()
     }
 }

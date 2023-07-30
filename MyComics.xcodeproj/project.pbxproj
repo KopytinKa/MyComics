@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		13B25FD09C35C058856187F3 /* Pods_MyComics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */; };
+		233121CA2A7673F3001C7159 /* UserIDProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121C92A7673F3001C7159 /* UserIDProvidable.swift */; };
+		233121CC2A767401001C7159 /* UserIDStoragable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121CB2A767401001C7159 /* UserIDStoragable.swift */; };
+		233121CE2A767415001C7159 /* UserAuthStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121CD2A767415001C7159 /* UserAuthStorage.swift */; };
+		233121D22A767643001C7159 /* LikesInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121D12A767643001C7159 /* LikesInfoProvider.swift */; };
+		233121D42A767666001C7159 /* LikesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121D32A767666001C7159 /* LikesManager.swift */; };
+		233121D62A767673001C7159 /* LikesStoragable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121D52A767673001C7159 /* LikesStoragable.swift */; };
+		233121D82A76768A001C7159 /* LikesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121D72A76768A001C7159 /* LikesStorage.swift */; };
+		233121DA2A7676B1001C7159 /* CharacterLikesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121D92A7676B1001C7159 /* CharacterLikesStorage.swift */; };
+		233121DC2A7676BF001C7159 /* ComicLikesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121DB2A7676BF001C7159 /* ComicLikesStorage.swift */; };
+		233121DE2A7676DB001C7159 /* Notification.Name + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121DD2A7676DB001C7159 /* Notification.Name + Extensions.swift */; };
+		233121E02A76772F001C7159 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233121DF2A76772F001C7159 /* LikeButton.swift */; };
 		2347CC012A63F6F8003CB1CE /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC002A63F6F8003CB1CE /* EmptyPlaceholderView.swift */; };
 		2347CC032A63F718003CB1CE /* EmptyPlaceholderView + Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC022A63F718003CB1CE /* EmptyPlaceholderView + Model.swift */; };
 		2347CC052A63F77A003CB1CE /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC042A63F77A003CB1CE /* SearchableContent.swift */; };
@@ -94,15 +105,6 @@
 		8B72C6D12A4C86E800BFC6DA /* ComicsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72C6D02A4C86E800BFC6DA /* ComicsModuleBuilder.swift */; };
 		8B72C6D42A4C871C00BFC6DA /* CharactersModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72C6D32A4C871C00BFC6DA /* CharactersModuleBuilder.swift */; };
 		8B72C6D62A4C87D100BFC6DA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72C6D52A4C87D100BFC6DA /* UIViewController+Extension.swift */; };
-		BB1B46032A6005EA005C551A /* ComicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46022A6005EA005C551A /* ComicsCollectionViewCell.swift */; };
-		BB1B46052A6014B4005C551A /* ComicsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46042A6014B4005C551A /* ComicsContentView.swift */; };
-		BB1B46082A60311D005C551A /* ComicsContentView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46072A60311D005C551A /* ComicsContentView+Delegate.swift */; };
-		BB1B460A2A60313A005C551A /* ComicsContentView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46092A60313A005C551A /* ComicsContentView+DataSource.swift */; };
-		BB1B460D2A641C10005C551A /* ComicsPresentableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B460C2A641C10005C551A /* ComicsPresentableModel.swift */; };
-		BB1B460F2A641E94005C551A /* ComicsDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B460E2A641E94005C551A /* ComicsDataAdapter.swift */; };
-		BB1B46112A641EAB005C551A /* ComicsDataAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46102A641EAB005C551A /* ComicsDataAdapterProtocol.swift */; };
-		BB1B46132A6422D8005C551A /* ComicsCollectionViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46122A6422D8005C551A /* ComicsCollectionViewCell+Model.swift */; };
-		BB1B46152A64237F005C551A /* ComicsContentView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46142A64237F005C551A /* ComicsContentView+Model.swift */; };
 		8B72C6DE2A66D88500BFC6DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B72C6DD2A66D88500BFC6DA /* GoogleService-Info.plist */; };
 		8BDBF6E12A6D5E5D00F0CD5E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF6E02A6D5E5D00F0CD5E /* AuthViewController.swift */; };
 		8BDBF6E52A6D5E9E00F0CD5E /* AuthContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF6E42A6D5E9E00F0CD5E /* AuthContentView.swift */; };
@@ -132,6 +134,15 @@
 		8BDBF7272A6DBC3D00F0CD5E /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF7262A6DBC3D00F0CD5E /* FirebaseUser.swift */; };
 		8BDBF72A2A6DBECD00F0CD5E /* FirebaseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF7292A6DBECD00F0CD5E /* FirebaseKeys.swift */; };
 		8BDBF72D2A6DC17900F0CD5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF72C2A6DC17900F0CD5E /* UserModel.swift */; };
+		BB1B46032A6005EA005C551A /* ComicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46022A6005EA005C551A /* ComicsCollectionViewCell.swift */; };
+		BB1B46052A6014B4005C551A /* ComicsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46042A6014B4005C551A /* ComicsContentView.swift */; };
+		BB1B46082A60311D005C551A /* ComicsContentView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46072A60311D005C551A /* ComicsContentView+Delegate.swift */; };
+		BB1B460A2A60313A005C551A /* ComicsContentView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46092A60313A005C551A /* ComicsContentView+DataSource.swift */; };
+		BB1B460D2A641C10005C551A /* ComicsPresentableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B460C2A641C10005C551A /* ComicsPresentableModel.swift */; };
+		BB1B460F2A641E94005C551A /* ComicsDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B460E2A641E94005C551A /* ComicsDataAdapter.swift */; };
+		BB1B46112A641EAB005C551A /* ComicsDataAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46102A641EAB005C551A /* ComicsDataAdapterProtocol.swift */; };
+		BB1B46132A6422D8005C551A /* ComicsCollectionViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46122A6422D8005C551A /* ComicsCollectionViewCell+Model.swift */; };
+		BB1B46152A64237F005C551A /* ComicsContentView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46142A64237F005C551A /* ComicsContentView+Model.swift */; };
 		CE4BA9412A61797A00B3D9AE /* DetailCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BA9402A61797A00B3D9AE /* DetailCharacterModel.swift */; };
 		CE61E3262A658C360093F8D1 /* DetailComicModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61E3252A658C360093F8D1 /* DetailComicModuleBuilder.swift */; };
 		CE61E32B2A658D990093F8D1 /* DetailComicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61E32A2A658D990093F8D1 /* DetailComicPresenter.swift */; };
@@ -147,6 +158,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		233121C92A7673F3001C7159 /* UserIDProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIDProvidable.swift; sourceTree = "<group>"; };
+		233121CB2A767401001C7159 /* UserIDStoragable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIDStoragable.swift; sourceTree = "<group>"; };
+		233121CD2A767415001C7159 /* UserAuthStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthStorage.swift; sourceTree = "<group>"; };
+		233121D12A767643001C7159 /* LikesInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesInfoProvider.swift; sourceTree = "<group>"; };
+		233121D32A767666001C7159 /* LikesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesManager.swift; sourceTree = "<group>"; };
+		233121D52A767673001C7159 /* LikesStoragable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesStoragable.swift; sourceTree = "<group>"; };
+		233121D72A76768A001C7159 /* LikesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesStorage.swift; sourceTree = "<group>"; };
+		233121D92A7676B1001C7159 /* CharacterLikesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLikesStorage.swift; sourceTree = "<group>"; };
+		233121DB2A7676BF001C7159 /* ComicLikesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicLikesStorage.swift; sourceTree = "<group>"; };
+		233121DD2A7676DB001C7159 /* Notification.Name + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name + Extensions.swift"; sourceTree = "<group>"; };
+		233121DF2A76772F001C7159 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		2347CC002A63F6F8003CB1CE /* EmptyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholderView.swift; sourceTree = "<group>"; };
 		2347CC022A63F718003CB1CE /* EmptyPlaceholderView + Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyPlaceholderView + Model.swift"; sourceTree = "<group>"; };
 		2347CC042A63F77A003CB1CE /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
@@ -238,15 +260,6 @@
 		8B72C6D02A4C86E800BFC6DA /* ComicsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsModuleBuilder.swift; sourceTree = "<group>"; };
 		8B72C6D32A4C871C00BFC6DA /* CharactersModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModuleBuilder.swift; sourceTree = "<group>"; };
 		8B72C6D52A4C87D100BFC6DA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		BB1B46022A6005EA005C551A /* ComicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCollectionViewCell.swift; sourceTree = "<group>"; };
-		BB1B46042A6014B4005C551A /* ComicsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsContentView.swift; sourceTree = "<group>"; };
-		BB1B46072A60311D005C551A /* ComicsContentView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsContentView+Delegate.swift"; sourceTree = "<group>"; };
-		BB1B46092A60313A005C551A /* ComicsContentView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsContentView+DataSource.swift"; sourceTree = "<group>"; };
-		BB1B460C2A641C10005C551A /* ComicsPresentableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsPresentableModel.swift; sourceTree = "<group>"; };
-		BB1B460E2A641E94005C551A /* ComicsDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDataAdapter.swift; sourceTree = "<group>"; };
-		BB1B46102A641EAB005C551A /* ComicsDataAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDataAdapterProtocol.swift; sourceTree = "<group>"; };
-		BB1B46122A6422D8005C551A /* ComicsCollectionViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsCollectionViewCell+Model.swift"; sourceTree = "<group>"; };
-		BB1B46142A64237F005C551A /* ComicsContentView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsContentView+Model.swift"; sourceTree = "<group>"; };
 		8B72C6DD2A66D88500BFC6DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8BDBF6E02A6D5E5D00F0CD5E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		8BDBF6E42A6D5E9E00F0CD5E /* AuthContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContentView.swift; sourceTree = "<group>"; };
@@ -273,6 +286,15 @@
 		8BDBF7262A6DBC3D00F0CD5E /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		8BDBF7292A6DBECD00F0CD5E /* FirebaseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseKeys.swift; sourceTree = "<group>"; };
 		8BDBF72C2A6DC17900F0CD5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BB1B46022A6005EA005C551A /* ComicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB1B46042A6014B4005C551A /* ComicsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsContentView.swift; sourceTree = "<group>"; };
+		BB1B46072A60311D005C551A /* ComicsContentView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsContentView+Delegate.swift"; sourceTree = "<group>"; };
+		BB1B46092A60313A005C551A /* ComicsContentView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsContentView+DataSource.swift"; sourceTree = "<group>"; };
+		BB1B460C2A641C10005C551A /* ComicsPresentableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsPresentableModel.swift; sourceTree = "<group>"; };
+		BB1B460E2A641E94005C551A /* ComicsDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDataAdapter.swift; sourceTree = "<group>"; };
+		BB1B46102A641EAB005C551A /* ComicsDataAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDataAdapterProtocol.swift; sourceTree = "<group>"; };
+		BB1B46122A6422D8005C551A /* ComicsCollectionViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsCollectionViewCell+Model.swift"; sourceTree = "<group>"; };
+		BB1B46142A64237F005C551A /* ComicsContentView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsContentView+Model.swift"; sourceTree = "<group>"; };
 		CE4BA9402A61797A00B3D9AE /* DetailCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterModel.swift; sourceTree = "<group>"; };
 		CE61E3252A658C360093F8D1 /* DetailComicModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComicModuleBuilder.swift; sourceTree = "<group>"; };
 		CE61E32A2A658D990093F8D1 /* DetailComicPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComicPresenter.swift; sourceTree = "<group>"; };
@@ -302,6 +324,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		233121C82A7673E7001C7159 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				233121C92A7673F3001C7159 /* UserIDProvidable.swift */,
+				233121CB2A767401001C7159 /* UserIDStoragable.swift */,
+				233121CD2A767415001C7159 /* UserAuthStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		233121CF2A767626001C7159 /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				233121D02A767638001C7159 /* Base */,
+				233121D92A7676B1001C7159 /* CharacterLikesStorage.swift */,
+				233121DB2A7676BF001C7159 /* ComicLikesStorage.swift */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
+		233121D02A767638001C7159 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				233121D12A767643001C7159 /* LikesInfoProvider.swift */,
+				233121D32A767666001C7159 /* LikesManager.swift */,
+				233121D52A767673001C7159 /* LikesStoragable.swift */,
+				233121D72A76768A001C7159 /* LikesStorage.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		2347CBFF2A63F6ED003CB1CE /* Empty Placeholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +376,7 @@
 		23A8A11E2A4C90E8007D09FB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				233121CF2A767626001C7159 /* Likes */,
 				8BDBF7122A6DA79E00F0CD5E /* UserDefaultsService */,
 				8BDBF6F02A6D7D5D00F0CD5E /* Firebase */,
 				23A8A18F2A518FA5007D09FB /* Images Loader */,
@@ -485,6 +539,7 @@
 				2347CBFF2A63F6ED003CB1CE /* Empty Placeholder */,
 				23A8A19B2A51905B007D09FB /* AsyncImageView.swift */,
 				23A8A19D2A5190CB007D09FB /* AsyncImage.swift */,
+				233121DF2A76772F001C7159 /* LikeButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -661,6 +716,7 @@
 				23A8A1942A518FF0007D09FB /* UIColor + Extensions.swift */,
 				23A8A1962A519007007D09FB /* UIImage + Extensions.swift */,
 				23EF146A2A5AD5A300289B09 /* Collection + Extensions.swift */,
+				233121DD2A7676DB001C7159 /* Notification.Name + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -814,6 +870,7 @@
 		8BDBF6F02A6D7D5D00F0CD5E /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				233121C82A7673E7001C7159 /* Storage */,
 				8BDBF6F82A6D83D200F0CD5E /* Database */,
 				8BDBF6F12A6D7D6B00F0CD5E /* Auth */,
 			);
@@ -954,8 +1011,8 @@
 				BB1B46102A641EAB005C551A /* ComicsDataAdapterProtocol.swift */,
 			);
 			path = Model;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		CE4BA93F2A61795D00B3D9AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,6 +1228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233121D42A767666001C7159 /* LikesManager.swift in Sources */,
 				23A8A19E2A5190CB007D09FB /* AsyncImage.swift in Sources */,
 				BB1B460A2A60313A005C551A /* ComicsContentView+DataSource.swift in Sources */,
 				2347CC0A2A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift in Sources */,
@@ -1185,6 +1243,7 @@
 				8BDBF6F32A6D7D7E00F0CD5E /* AuthService.swift in Sources */,
 				23A8A16B2A4D5CC9007D09FB /* URLComponents + Extensions.swift in Sources */,
 				8BDBF6E72A6D5ED500F0CD5E /* AuthViewOutput.swift in Sources */,
+				233121CE2A767415001C7159 /* UserAuthStorage.swift in Sources */,
 				23A8A1422A4C9139007D09FB /* EventEntity.swift in Sources */,
 				8B72C6C32A4C844500BFC6DA /* CharactersViewOutput.swift in Sources */,
 				8B72C6B52A4C814900BFC6DA /* CharactersViewController.swift in Sources */,
@@ -1208,12 +1267,16 @@
 				8B72C6B72A4C816200BFC6DA /* ComicsViewController.swift in Sources */,
 				CECDDC012A5C1BB0006E17EB /* DetailCharacterViewInput.swift in Sources */,
 				8BDBF72D2A6DC17900F0CD5E /* UserModel.swift in Sources */,
+				233121CA2A7673F3001C7159 /* UserIDProvidable.swift in Sources */,
 				8B72C6AD2A4C809F00BFC6DA /* LocalizationKeys.swift in Sources */,
 				23EF14602A5ABF0700289B09 /* RequestParameters.swift in Sources */,
+				233121D22A767643001C7159 /* LikesInfoProvider.swift in Sources */,
+				233121DE2A7676DB001C7159 /* Notification.Name + Extensions.swift in Sources */,
 				23A8A13D2A4C9139007D09FB /* CreatorsAPIService.swift in Sources */,
 				23A8A13F2A4C9139007D09FB /* DefaultAPIService.swift in Sources */,
 				8B72C6D62A4C87D100BFC6DA /* UIViewController+Extension.swift in Sources */,
 				8BDBF7272A6DBC3D00F0CD5E /* FirebaseUser.swift in Sources */,
+				233121E02A76772F001C7159 /* LikeButton.swift in Sources */,
 				23A8A1972A519007007D09FB /* UIImage + Extensions.swift in Sources */,
 				2347CC052A63F77A003CB1CE /* SearchableContent.swift in Sources */,
 				23EF14642A5AC36E00289B09 /* LoadingFooterView.swift in Sources */,
@@ -1256,6 +1319,7 @@
 				23A8A1912A518FB0007D09FB /* ImageLoader.swift in Sources */,
 				8BDBF71D2A6DAEA700F0CD5E /* ProfileContentViewDelegate.swift in Sources */,
 				23A8A1632A4D5C6C007D09FB /* EventsProvidable.swift in Sources */,
+				233121DA2A7676B1001C7159 /* CharacterLikesStorage.swift in Sources */,
 				8BDBF6E92A6D5F1E00F0CD5E /* AuthViewInput.swift in Sources */,
 				23A8A1652A4D5C78007D09FB /* CreatorsProvidable.swift in Sources */,
 				8BDBF7212A6DB62B00F0CD5E /* ProfileCoordinatorProtocol.swift in Sources */,
@@ -1280,10 +1344,13 @@
 				8BDBF7182A6DAACD00F0CD5E /* UserDefaultsKeys.swift in Sources */,
 				23A8A1442A4C9139007D09FB /* CharacterEntity.swift in Sources */,
 				CE61E32B2A658D990093F8D1 /* DetailComicPresenter.swift in Sources */,
+				233121D62A767673001C7159 /* LikesStoragable.swift in Sources */,
 				23A8A1412A4C9139007D09FB /* SeriesEntity.swift in Sources */,
+				233121CC2A767401001C7159 /* UserIDStoragable.swift in Sources */,
 				23A8A1732A4D5D89007D09FB /* NetworkService + Error.swift in Sources */,
 				BB1B46052A6014B4005C551A /* ComicsContentView.swift in Sources */,
 				8B72C6D12A4C86E800BFC6DA /* ComicsModuleBuilder.swift in Sources */,
+				233121DC2A7676BF001C7159 /* ComicLikesStorage.swift in Sources */,
 				8BDBF7162A6DA7B900F0CD5E /* UserDefaultsServiceProtocol.swift in Sources */,
 				CECDDC092A5C1CA4006E17EB /* DetailCharacterModuleBuilder.swift in Sources */,
 				23A8A1812A4E8DB4007D09FB /* APIBuilder.swift in Sources */,
@@ -1295,6 +1362,7 @@
 				8BDBF6EF2A6D6CE600F0CD5E /* AuthContentViewDelegate.swift in Sources */,
 				23A8A1452A4C9139007D09FB /* ComicEntity.swift in Sources */,
 				8BDBF6FD2A6D857300F0CD5E /* DatabaseServiceProtocol.swift in Sources */,
+				233121D82A76768A001C7159 /* LikesStorage.swift in Sources */,
 				8B72C6CB2A4C84C800BFC6DA /* ProfileViewOutput.swift in Sources */,
 				BB1B46152A64237F005C551A /* ComicsContentView+Model.swift in Sources */,
 				23A8A1492A4C9139007D09FB /* List.swift in Sources */,

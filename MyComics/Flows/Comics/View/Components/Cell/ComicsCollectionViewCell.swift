@@ -105,7 +105,7 @@ private extension ComicsCollectionViewCell {
     }
     
     func setupLikeButton() {
-        likeButton.setImage(.likeButton, for: .normal)
+        likeButton.setImage(.emptyHeart, for: .normal)
     }
     
     func setupTitleLabel() {

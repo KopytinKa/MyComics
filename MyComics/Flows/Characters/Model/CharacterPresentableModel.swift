@@ -8,6 +8,8 @@
 import Foundation
 
 struct CharacterPresentableModel {
+    let id: String
     let title: String
     let image: AsyncImage
+    var isLiked: Bool
 }
