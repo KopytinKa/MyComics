@@ -58,7 +58,7 @@ private extension LikeButton {
     
     func toggleState() {
         if isSelectedState {
-            tintColor = .appTintRed
+            tintColor = .marvelRed
             setBackgroundImage(.fillHeart, for: .normal)
         } else {
             tintColor = .white
