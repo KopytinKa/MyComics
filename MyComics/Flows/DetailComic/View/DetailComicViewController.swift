@@ -24,6 +24,7 @@ final class DetailComicViewController: UIViewController {
         comicTitleLabel.textColor = .white
         comicTitleLabel.font = .systemFont(ofSize: 23, weight: .bold)
         comicTitleLabel.textAlignment = .center
+        comicTitleLabel.numberOfLines = 3
         return comicTitleLabel
     }()
     
@@ -64,6 +65,7 @@ final class DetailComicViewController: UIViewController {
     private func configureUI() {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: .likeBarButtonItem, style: .plain, target: self, action: #selector(tapLikeNavBarButton))
+        navigationItem.rightBarButtonItem?.tintColor = .marvelRed
         view.backgroundColor = .commonBackground
         view.addSubview(comicImageView)
         view.addSubview(comicTitleLabel)
@@ -101,6 +103,9 @@ final class DetailComicViewController: UIViewController {
 // MARK: - DetailComicViewInput
 
 extension DetailComicViewController: DetailComicViewInput {
-    func updateView() {
+    func updateView(model: DetailComicModel) {
+        comicTitleLabel.text = model.title
+        comicImageView.asyncImage = model.image
+        comicDescriptionLabel.text = model.description
     }
 }

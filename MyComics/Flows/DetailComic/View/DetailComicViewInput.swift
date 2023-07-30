@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DetailComicViewInput: AnyObject {
-    func updateView()
+    func updateView(model: DetailComicModel)
 }
