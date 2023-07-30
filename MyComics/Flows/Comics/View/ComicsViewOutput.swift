@@ -9,4 +9,5 @@ import Foundation
 
 protocol ComicsViewOutput: AnyObject {
     func viewIsReady()
+    func didTapCell(_ indexPath: IndexPath)
 }

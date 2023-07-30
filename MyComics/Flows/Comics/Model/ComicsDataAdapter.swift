@@ -30,11 +30,13 @@ final class ComicsDataAdapter: ComicsDataAdapterProtocol {
             guard let self = self else {
                 return
             }
-            
             self.processLoadedContent(rawData: rawData, completion: completion)
-            
-            print("(ComicsDataAdapter): Comics items loaded = \(String(describing: rawData?.count))")
         }
+    }
+    
+    func getComicID(by indexPath: IndexPath) -> Int? {
+        guard let entity = entities[safe: indexPath.item] else { return nil }
+        return entity.id
     }
 }
 
@@ -49,8 +51,6 @@ private extension ComicsDataAdapter {
         }
         let models = setupModels(rawData: rawData)
         completion(models)
-        
-        print("(ComicsDataAdapter): Models setup = \(models.count)")
     }
     
     func setupModels(rawData: [ComicEntity]) -> [ComicsPresentableModel] {
@@ -67,10 +67,7 @@ private extension ComicsDataAdapter {
         
         entities.append(contentsOf: rawData)
         models.append(contentsOf: configuredModels)
-        
-        print("(ComicsDataAdapter): entities.append -> \(rawData.count) items")
-        print("(ComicsDataAdapter): models.append -> \(configuredModels.count) items")
-        
+       
         return models
     }
 }

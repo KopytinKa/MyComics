@@ -117,7 +117,7 @@ private extension ComicsCollectionViewCell {
     
     func setupAuthorLabel() {
         authorLabel.textAlignment = .center
-        authorLabel.textColor = .appTintRed
+        authorLabel.textColor = .marvelRed
         authorLabel.font = .systemFont(ofSize: 14)
         authorLabel.numberOfLines = 1
     }

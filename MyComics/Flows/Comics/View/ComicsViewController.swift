@@ -31,6 +31,7 @@ final class ComicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupActions()
     }
     
     override func loadView() {
@@ -60,5 +61,11 @@ private extension ComicsViewController {
         navigationItem.title = LocalizationKeys.localized(.comicsTabItem)
         view.backgroundColor = .commonBackground
         navigationItem.searchController = searchController
+    }
+    
+    func setupActions() {
+        contentView.setOnCellTapAction { [unowned self] indexPath in
+            presenter.didTapCell(indexPath)
+        }
     }
 }
