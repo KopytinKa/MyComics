@@ -23,7 +23,7 @@ final class DetailCharacterViewController: UIViewController {
     private let nameCharacterLabel: UILabel = {
         let nameCharacterLabel = UILabel()
         nameCharacterLabel.textColor = .white
-        nameCharacterLabel.font = .systemFont(ofSize: 23, weight: .bold)
+        nameCharacterLabel.font = .systemFont(ofSize: 20, weight: .bold)
         nameCharacterLabel.textAlignment = .center
         return nameCharacterLabel
     }()
@@ -32,7 +32,7 @@ final class DetailCharacterViewController: UIViewController {
         let descriptionLabel = UILabel()
         descriptionLabel.textColor = .white
         descriptionLabel.textAlignment = .center
-        descriptionLabel.font = .systemFont(ofSize: 17, weight: .light)
+        descriptionLabel.font = .systemFont(ofSize: 15, weight: .light)
         descriptionLabel.numberOfLines = 10
         return descriptionLabel
     }()

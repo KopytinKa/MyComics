@@ -22,7 +22,7 @@ final class DetailComicViewController: UIViewController {
     private let comicTitleLabel: UILabel = {
         let comicTitleLabel = UILabel()
         comicTitleLabel.textColor = .white
-        comicTitleLabel.font = .systemFont(ofSize: 23, weight: .bold)
+        comicTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         comicTitleLabel.textAlignment = .center
         comicTitleLabel.numberOfLines = 3
         return comicTitleLabel
@@ -32,7 +32,7 @@ final class DetailComicViewController: UIViewController {
         let comicDescriptionLabel = UILabel()
         comicDescriptionLabel.textColor = .white
         comicDescriptionLabel.textAlignment = .center
-        comicDescriptionLabel.font = .systemFont(ofSize: 17, weight: .light)
+        comicDescriptionLabel.font = .systemFont(ofSize: 15, weight: .light)
         comicDescriptionLabel.numberOfLines = 10
         return comicDescriptionLabel
     }()
