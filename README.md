@@ -51,10 +51,15 @@ MyComics - это приложение, которое позволяет люб
 
 <a href="https://developer.marvel.com/docs">Marvel API documentation</a>
 
-### Требования
+## Требования
 
 - iOS 15.0+
 - Xcode 14.2
+
+## Дизайн
+
+### Вы можете посмотреть отрисованный дизайн приложения в Figma  
+<a href="https://www.figma.com/file/CKjRn5oMcpqmNgHWIFcH08/Marvel-Application?type=design&node-id=0%3A1&mode=design&t=bgoW4WDgNQYLf6Oh-1"> <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/> </a>
 
 # Наша iOS команда
 
