@@ -8,6 +8,7 @@
 import Foundation
 
 protocol CharactersViewInput: AnyObject {
-    func showData()
-    func showAlert(with message: String)
+    func update(models: [CharactersContentView.Model])
+    func showEmptySearchPlaceholder()
+    func removeEmptySearchPlaceholder()
 }

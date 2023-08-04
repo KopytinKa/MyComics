@@ -12,20 +12,41 @@ final class RootCoordinator {
     private weak var window: UIWindow?
     
     func start(in window: UIWindow) {
-        let charactersVC = UINavigationController(rootViewController: CharactersModuleBuilder.build())
-        charactersVC.tabBarItem.image = UIImage(systemName: "bubble.left.and.bubble.right")
-        charactersVC.tabBarItem.title = LocalizationKeys.charactersTabItem.rawValue.localized
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .navigationBarGray
         
-        let comicsVC = UINavigationController(rootViewController: ComicsModuleBuilder.build())
-        comicsVC.tabBarItem.image = UIImage(systemName: "person.circle")
-        comicsVC.tabBarItem.title = LocalizationKeys.comicsTabItem.rawValue.localized
+        let charactersNavigationController = UINavigationController()
         
-        let profileVC = UINavigationController(rootViewController: ProfileModuleBuilder.build())
-        profileVC.tabBarItem.image = UIImage(systemName: "gear")
-        profileVC.tabBarItem.title = LocalizationKeys.profileTabItem.rawValue.localized
+        let charactersViewController = CharactersModuleBuilder.build(charactersNavigationController)
+        charactersNavigationController.pushViewController(charactersViewController, animated: false)
+        charactersNavigationController.tabBarItem.image = UIImage(systemName: "aqi.medium")
+        charactersNavigationController.tabBarItem.title = LocalizationKeys.localized(.charactersTabItem)
+        
+        let comicsNavigationController = UINavigationController()
+        
+        let comicsVC = ComicsModuleBuilder.build(comicsNavigationController)
+        comicsNavigationController.pushViewController(comicsVC, animated: false)
+        comicsNavigationController.tabBarItem.image = UIImage(systemName: "magazine")
+        comicsNavigationController.tabBarItem.title = LocalizationKeys.localized(.comicsTabItem)
+        
+        let authNavigationController = UINavigationController()
+        
+        let authVC = AuthModuleBuilder.build(authNavigationController)
+        authNavigationController.pushViewController(authVC, animated: false)
+        authNavigationController.tabBarItem.image = UIImage(systemName: "person.crop.circle.dashed")
+        authNavigationController.tabBarItem.title = LocalizationKeys.localized(.profileTabItem)
         
         let tabBarVC = UITabBarController()
-        tabBarVC.viewControllers = [charactersVC, comicsVC, profileVC]
+        tabBarVC.viewControllers = [charactersNavigationController, comicsNavigationController, authNavigationController]
+        
+        tabBarVC.viewControllers?.forEach {
+            if let navigationController = $0 as? UINavigationController {
+                navigationController.navigationBar.prefersLargeTitles = true
+                navigationController.navigationBar.standardAppearance = appearance
+                navigationController.navigationBar.scrollEdgeAppearance = appearance
+                navigationController.navigationBar.compactAppearance = appearance
+            }
+        }
         
         window.makeKeyAndVisible()
         window.rootViewController = tabBarVC

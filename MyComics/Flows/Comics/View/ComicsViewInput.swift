@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ComicsViewInput: AnyObject {
-    func showData()
+    func update(models: [ComicsContentView.Model])
     func showAlert(with message: String)
 }

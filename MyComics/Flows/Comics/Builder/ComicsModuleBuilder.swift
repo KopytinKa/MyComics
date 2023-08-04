@@ -8,11 +8,15 @@
 import UIKit
 
 final class ComicsModuleBuilder {
-    
-    static func build() -> UIViewController {
-        let presenter = ComicsPresenter()
-        let vc = ComicsViewController(presenter: presenter)
-        presenter.view = vc
-        return vc
+    static func build(_ navigationController: UINavigationController?) -> UIViewController {
+        let comicsAPI = APIBuilder.shared.makeComicsAPI()
+        let dataAdapter = ComicsDataAdapter(comicsAPI: comicsAPI)
+        let coordinator = ComicsScreenCoordinator(navigationController: navigationController)
+        let presenter = ComicsPresenter(
+            coordinator: coordinator, dataAdapter: dataAdapter
+        )
+        let comicsViewController = ComicsViewController(presenter: presenter)
+        presenter.view = comicsViewController
+        return comicsViewController
     }
 }

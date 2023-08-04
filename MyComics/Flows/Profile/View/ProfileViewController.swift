@@ -11,6 +11,7 @@ final class ProfileViewController: UIViewController {
 
     // MARK: - Properties
     
+    private let contentView = ProfileContentView()
     private var presenter: ProfileViewOutput
 
     // MARK: - Init
@@ -20,14 +21,22 @@ final class ProfileViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available (*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        assertionFailure("init(coder:) has not been implemented")
+        return nil
     }
     
     // MARK: - Lifecycle
     
+    override func loadView() {
+        view = contentView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.delegate = self
+        navigationItem.title = LocalizationKeys.localized(.profileTabItem)
         presenter.viewIsReady()
     }
     
@@ -36,11 +45,28 @@ final class ProfileViewController: UIViewController {
 // MARK: - ProfileViewInput
 
 extension ProfileViewController: ProfileViewInput {
-    func showData() {
-        print("Done")
-    }
-    
     func showAlert(with message: String) {
         showError(message: message)
     }
+    
+    func showData(_ data: UserModel) {
+        contentView.configure(model: data)
+    }
+}
+
+// MARK: - ProfileContentViewDelegate
+
+extension ProfileViewController: ProfileContentViewDelegate {
+    func logoutButtonPressed() {
+        presenter.logoutButtonPressed()
+    }
+    
+    func favoriteCharactersButtonPressed() {
+        presenter.favoriteCharactersButtonPressed()
+    }
+    
+    func readComicsButtonPressed() {
+        presenter.readComicsButtonPressed()
+    }
+    
 }

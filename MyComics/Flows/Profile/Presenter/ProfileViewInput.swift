@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ProfileViewInput: AnyObject {
-    func showData()
+    func showData(_ data: UserModel)
     func showAlert(with message: String)
 }

@@ -9,4 +9,7 @@ import Foundation
 
 protocol ProfileViewOutput: AnyObject {
     func viewIsReady()
+    func logoutButtonPressed()
+    func favoriteCharactersButtonPressed()
+    func readComicsButtonPressed()
 }

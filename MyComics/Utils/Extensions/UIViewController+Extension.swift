@@ -9,9 +9,9 @@ import UIKit
 
 extension UIViewController {
     
-    func showError(title: String = LocalizationKeys.errorAlertTitle.rawValue.localized, message: String) {
+    func showError(title: String = LocalizationKeys.localized(.errorAlertTitle), message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: LocalizationKeys.alertCancelAction.rawValue.localized, style: .cancel, handler: nil)
+        let action = UIAlertAction(title: LocalizationKeys.localized(.alertCancelAction), style: .cancel, handler: nil)
         alert.addAction(action)
         
         present(alert, animated: true)

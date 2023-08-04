@@ -14,3 +14,20 @@
 // MARK: - Alert
 "errorAlertTitle" = "Ошибка";
 "alertCancelAction" = "Отмена";
+
+// MARK: - Titles
+"detailButtonTitle" = "Подробнее";
+
+// MARK: - Auth
+"enterName" = "Введите ник";
+"enterEmail" = "Введите email";
+"enterPassword" = "Введите пароль";
+"loginButton" = "Войти";
+"registerButton" = "Регистрация";
+"haveNotAccountLabel" = "Если у вас нет аккаунта, нажмите";
+"haveAccountLabel" = "Если у вас уже есть аккаунт, нажмите";
+
+// MARK: - Profile
+"logoutButton" = "Выйти";
+"favoriteCharactersButton" = "Мои персонажи";
+"readComicsButton" = "Прочитано";
